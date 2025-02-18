@@ -92,24 +92,24 @@ namespace DevelopmentChallenge.Data.Classes
                 }
 
                 sb.Append(formaCuadrado.Cantidad > 0 ?
-                    $"{formaCuadrado.Cantidad} {traductor.TraducirForma(formaCuadrado.Tipo, formaCuadrado.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaCuadrado.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaCuadrado.Perimetro:#.##}"
+                    $"{formaCuadrado.Cantidad} {traductor.TraducirForma(formaCuadrado.Tipo, formaCuadrado.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaCuadrado.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaCuadrado.Perimetro:#.##} <br/>"
                     : "");
                 sb.Append(formaCirculo.Cantidad > 0 ?
-                    $"{formaCirculo.Cantidad} {traductor.TraducirForma(formaCirculo.Tipo, formaCirculo.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaCirculo.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaCirculo.Perimetro:#.##}"
+                    $"{formaCirculo.Cantidad} {traductor.TraducirForma(formaCirculo.Tipo, formaCirculo.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaCirculo.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaCirculo.Perimetro:#.##} <br/>"
                     : "");
                 sb.Append(formaTriangulo.Cantidad > 0 ?
-                    $"{formaTriangulo.Cantidad} {traductor.TraducirForma(formaTriangulo.Tipo, formaTriangulo.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaTriangulo.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaTriangulo.Perimetro:#.##}"
+                    $"{formaTriangulo.Cantidad} {traductor.TraducirForma(formaTriangulo.Tipo, formaTriangulo.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaTriangulo.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaTriangulo.Perimetro:#.##} <br/>"
                     : "");
                 sb.Append(formaTrapecio.Cantidad > 0 ?
-                    $"{formaTrapecio.Cantidad} {traductor.TraducirForma(formaTrapecio.Tipo, formaTrapecio.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaTrapecio.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaTrapecio.Perimetro:#.##}"
+                    $"{formaTrapecio.Cantidad} {traductor.TraducirForma(formaTrapecio.Tipo, formaTrapecio.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaTrapecio.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaTrapecio.Perimetro:#.##} <br/>"
                     : "");
                 sb.Append(formaRectangulo.Cantidad > 0 ?
-                    $"{formaRectangulo.Cantidad} {traductor.TraducirForma(formaRectangulo.Tipo, formaRectangulo.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaRectangulo.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaRectangulo.Perimetro:#.##}"
+                    $"{formaRectangulo.Cantidad} {traductor.TraducirForma(formaRectangulo.Tipo, formaRectangulo.Cantidad, idioma)} | {traductor.TextoComunTraducido(idioma, "area")} {formaRectangulo.Area:#.##} | {traductor.TextoComunTraducido(idioma, "perimetro")} {formaRectangulo.Perimetro:#.##} <br/>"
                     : "");
 
                 sb.Append($"{traductor.TextoComunTraducido(idioma, "total")}:<br/>");
-                sb.Append($"{formaCuadrado.Cantidad + formaCirculo.Cantidad + formaTriangulo.Cantidad + formaTrapecio.Cantidad + formaRectangulo.Cantidad} {traductor.TextoComunTraducido(idioma, "formas")}");
-                sb.Append($"{traductor.TextoComunTraducido(idioma, "perimetro")} {(formaCuadrado.Perimetro + formaCirculo.Perimetro + formaTriangulo.Perimetro + formaTrapecio.Perimetro + formaRectangulo.Perimetro).ToString("#.##")}");
+                sb.Append($"{formaCuadrado.Cantidad + formaCirculo.Cantidad + formaTriangulo.Cantidad + formaTrapecio.Cantidad + formaRectangulo.Cantidad} {traductor.TextoComunTraducido(idioma, "formas")} ");
+                sb.Append($"{traductor.TextoComunTraducido(idioma, "perimetro")} {(formaCuadrado.Perimetro + formaCirculo.Perimetro + formaTriangulo.Perimetro + formaTrapecio.Perimetro + formaRectangulo.Perimetro).ToString("#.##")} ");
                 sb.Append($"{traductor.TextoComunTraducido(idioma, "area")} {(formaCuadrado.Area + formaCirculo.Area + formaTriangulo.Area + formaTrapecio.Area + formaRectangulo.Area).ToString("#.##")}");
             }
 

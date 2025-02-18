@@ -112,10 +112,8 @@
                         return "Area";
                     else if (texto.ToLower() == "perimetro")
                         return "Perimetro";
-                    else if (texto.ToLower() == "total")
-                        return "Total";
                     else if (texto.ToLower() == "formas")
-                        return "Formas";
+                        return "formas";
                     else if (texto.ToLower() == "total")
                         return "TOTAL";
                     else
@@ -125,10 +123,8 @@
                         return "Area";
                     else if (texto.ToLower() == "perimetro")
                         return "Perimeter";
-                    else if (texto.ToLower() == "total")
-                        return "Total";
                     else if (texto.ToLower() == "formas")
-                        return "Shapes";
+                        return "shapes";
                     else if (texto.ToLower() == "total")
                         return "TOTAL";
                     else
@@ -138,10 +134,8 @@
                         return "Zona";
                     else if (texto.ToLower() == "perimetro")
                         return "Perimetro";
-                    else if (texto.ToLower() == "total")
-                        return "Totale";
                     else if (texto.ToLower() == "formas")
-                        return "Forme";
+                        return "forme";
                     else if (texto.ToLower() == "total")
                         return "TOTALE";
                     else
@@ -151,10 +145,8 @@
                         return "Area";
                     else if (texto.ToLower() == "perimetro")
                         return "Perimetro";
-                    else if (texto.ToLower() == "total")
-                        return "Total";
                     else if (texto.ToLower() == "formas")
-                        return "Formas";
+                        return "formas";
                     else if (texto.ToLower() == "total")
                         return "TOTAL";
                     else
