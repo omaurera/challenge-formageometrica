@@ -116,6 +116,8 @@
                         return "Total";
                     else if (texto.ToLower() == "formas")
                         return "Formas";
+                    else if (texto.ToLower() == "total")
+                        return "TOTAL";
                     else
                         return "Forma desconocida";
                 case Enums.Idiomas.Ingles:
@@ -127,6 +129,8 @@
                         return "Total";
                     else if (texto.ToLower() == "formas")
                         return "Shapes";
+                    else if (texto.ToLower() == "total")
+                        return "TOTAL";
                     else
                         return "Unknown shapes";
                 case Enums.Idiomas.Italiano:
@@ -138,6 +142,8 @@
                         return "Totale";
                     else if (texto.ToLower() == "formas")
                         return "Forme";
+                    else if (texto.ToLower() == "total")
+                        return "TOTALE";
                     else
                         return "Forme sconosciute";
                 case Enums.Idiomas.Portugues:
@@ -149,6 +155,8 @@
                         return "Total";
                     else if (texto.ToLower() == "formas")
                         return "Formas";
+                    else if (texto.ToLower() == "total")
+                        return "TOTAL";
                     else
                         return "Forma desconhecidas";
             }

@@ -21,14 +21,16 @@ namespace DevelopmentChallenge.Data.Classes
     {
         public decimal Lado;
         public Enums.Formas Tipo { get; set; }
-        public decimal Base { get; set; }
-        public decimal Altura { get; set; }
+        public decimal? Base { get; set; }
+        public decimal? Altura { get; set; }
 
 
-        public FormaGeometrica(Enums.Formas tipo, decimal ancho)
+        public FormaGeometrica(Enums.Formas tipo, decimal ancho, decimal? _base, decimal? altura)
         {
             Tipo = tipo;
             Lado = ancho;
+            Base = _base;
+            Altura = altura;
         }
 
         public static string Imprimir(List<FormaGeometrica> formas, Enums.Idiomas idioma)

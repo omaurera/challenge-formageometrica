@@ -10,8 +10,8 @@ namespace DevelopmentChallenge.Data.Classes
                 case Enums.Formas.Cuadrado: return forma.Lado * forma.Lado;
                 case Enums.Formas.Circulo: return (decimal)Math.PI * (forma.Lado / 2) * (forma.Lado / 2);
                 case Enums.Formas.TrianguloEquilatero: return ((decimal)Math.Sqrt(3) / 4) * forma.Lado * forma.Lado;
-                case Enums.Formas.Trapecio: return ((decimal)Math.Sqrt(4) / 4) * forma.Lado * forma.Lado;
-                case Enums.Formas.Rectangulo: return forma.Altura * forma.Base;
+                case Enums.Formas.Trapecio: return ((decimal)Math.Sqrt(2) / 4) * forma.Lado * forma.Lado;
+                case Enums.Formas.Rectangulo: return forma.Altura.Value * forma.Base.Value;
                 default:
                     throw new ArgumentOutOfRangeException(@"Forma desconocida");
             }
@@ -25,7 +25,7 @@ namespace DevelopmentChallenge.Data.Classes
                 case Enums.Formas.Circulo: return (decimal)Math.PI * forma.Lado;
                 case Enums.Formas.TrianguloEquilatero: return forma.Lado * 3;
                 case Enums.Formas.Trapecio: return forma.Lado * forma.Lado;
-                case Enums.Formas.Rectangulo: return (2 * forma.Altura) + (2 * forma.Base);
+                case Enums.Formas.Rectangulo: return (2 * forma.Altura.Value) + (2 * forma.Base.Value);
                 default:
                     throw new ArgumentOutOfRangeException(@"Forma desconocida");
             }

@@ -23,9 +23,23 @@ namespace DevelopmentChallenge.Data.Tests
         }
 
         [TestCase]
+        public void TestResumenListaVaciaFormasEnItaliano()
+        {
+            Assert.AreEqual("<h1>Elenco vuoto di forme!</h1>",
+                FormaGeometrica.Imprimir(new List<FormaGeometrica>(), 3));
+        }
+
+        [TestCase]
+        public void TestResumenListaVaciaFormasEnPortugues()
+        {
+            Assert.AreEqual("<h1>Lista vazia de formas!</h1>",
+                FormaGeometrica.Imprimir(new List<FormaGeometrica>(), 4));
+        }
+
+        [TestCase]
         public void TestResumenListaConUnCuadrado()
         {
-            var cuadrados = new List<FormaGeometrica> {new FormaGeometrica(FormaGeometrica.Cuadrado, 5)};
+            var cuadrados = new List<FormaGeometrica> {new FormaGeometrica(Enums.Formas.Cuadrado, 5)};
 
             var resumen = FormaGeometrica.Imprimir(cuadrados, FormaGeometrica.Castellano);
 
@@ -37,9 +51,9 @@ namespace DevelopmentChallenge.Data.Tests
         {
             var cuadrados = new List<FormaGeometrica>
             {
-                new FormaGeometrica(FormaGeometrica.Cuadrado, 5),
-                new FormaGeometrica(FormaGeometrica.Cuadrado, 1),
-                new FormaGeometrica(FormaGeometrica.Cuadrado, 3)
+                new FormaGeometrica(Enums.Formas.Cuadrado, 5),
+                new FormaGeometrica(Enums.Formas.Cuadrado, 1),
+                new FormaGeometrica(Enums.Formas.Cuadrado, 3)
             };
 
             var resumen = FormaGeometrica.Imprimir(cuadrados, FormaGeometrica.Ingles);
@@ -52,13 +66,13 @@ namespace DevelopmentChallenge.Data.Tests
         {
             var formas = new List<FormaGeometrica>
             {
-                new FormaGeometrica(FormaGeometrica.Cuadrado, 5),
-                new FormaGeometrica(FormaGeometrica.Circulo, 3),
-                new FormaGeometrica(FormaGeometrica.TrianguloEquilatero, 4),
-                new FormaGeometrica(FormaGeometrica.Cuadrado, 2),
-                new FormaGeometrica(FormaGeometrica.TrianguloEquilatero, 9),
-                new FormaGeometrica(FormaGeometrica.Circulo, 2.75m),
-                new FormaGeometrica(FormaGeometrica.TrianguloEquilatero, 4.2m)
+                new FormaGeometrica(Enums.Formas.Cuadrado, 5),
+                new FormaGeometrica(Enums.Formas.Circulo, 3),
+                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 4),
+                new FormaGeometrica(Enums.Formas.Cuadrado, 2),
+                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 9),
+                new FormaGeometrica(Enums.Formas.Circulo, 2.75m),
+                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 4.2m)
             };
 
             var resumen = FormaGeometrica.Imprimir(formas, FormaGeometrica.Ingles);
@@ -73,19 +87,34 @@ namespace DevelopmentChallenge.Data.Tests
         {
             var formas = new List<FormaGeometrica>
             {
-                new FormaGeometrica(FormaGeometrica.Cuadrado, 5),
-                new FormaGeometrica(FormaGeometrica.Circulo, 3),
-                new FormaGeometrica(FormaGeometrica.TrianguloEquilatero, 4),
-                new FormaGeometrica(FormaGeometrica.Cuadrado, 2),
-                new FormaGeometrica(FormaGeometrica.TrianguloEquilatero, 9),
-                new FormaGeometrica(FormaGeometrica.Circulo, 2.75m),
-                new FormaGeometrica(FormaGeometrica.TrianguloEquilatero, 4.2m)
+                new FormaGeometrica(Enums.Formas.Cuadrado, 5),
+                new FormaGeometrica(Enums.Formas.Circulo, 3),
+                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 4),
+                new FormaGeometrica(Enums.Formas.Cuadrado, 2),
+                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 9),
+                new FormaGeometrica(Enums.Formas.Circulo, 2.75m),
+                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 4.2m)
             };
 
             var resumen = FormaGeometrica.Imprimir(formas, FormaGeometrica.Castellano);
 
             Assert.AreEqual(
                 "<h1>Reporte de Formas</h1>2 Cuadrados | Area 29 | Perimetro 28 <br/>2 Círculos | Area 13,01 | Perimetro 18,06 <br/>3 Triángulos | Area 49,64 | Perimetro 51,6 <br/>TOTAL:<br/>7 formas Perimetro 97,66 Area 91,65",
+                resumen);
+        }
+
+        [TestCase]
+        public void TestResumenListaConRectanguloEnItaliano()
+        {
+            var formas = new List<FormaGeometrica>
+            {
+                new FormaGeometrica(Enums.Formas.Rectangulo, 5, 7, 5)
+            };
+
+            var resumen = FormaGeometrica.Imprimir(formas, FormaGeometrica.Castellano);
+
+            Assert.AreEqual(
+                "<h1>Reporte de Formas</h1>1 Rettangolo | Zona 35 | Perimetro 24 <br/>TOTAL:<br/>1 forma Perimetro 24 Zona 35",
                 resumen);
         }
     }
