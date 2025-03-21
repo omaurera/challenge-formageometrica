@@ -1,6 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using DevelopmentChallenge.Data.Classes;
+using DevelopmentChallenge.Data.Helpers;
 using NUnit.Framework;
 
 namespace DevelopmentChallenge.Data.Tests
@@ -39,7 +39,7 @@ namespace DevelopmentChallenge.Data.Tests
         [TestCase]
         public void TestResumenListaConUnCuadrado()
         {
-            var cuadrados = new List<FormaGeometrica> {new FormaGeometrica(Enums.Formas.Cuadrado, 5, null, null)};
+            var cuadrados = new List<FormaGeometrica> {new Cuadrado(5)};
 
             var resumen = FormaGeometrica.Imprimir(cuadrados, Enums.Idiomas.Castellano);
 
@@ -51,14 +51,14 @@ namespace DevelopmentChallenge.Data.Tests
         {
             var cuadrados = new List<FormaGeometrica>
             {
-                new FormaGeometrica(Enums.Formas.Cuadrado, 5, null, null),
-                new FormaGeometrica(Enums.Formas.Cuadrado, 1, null, null),
-                new FormaGeometrica(Enums.Formas.Cuadrado, 3, null, null)
+                new Cuadrado(5),
+                new Cuadrado(1),
+                new Cuadrado(3)
             };
 
             var resumen = FormaGeometrica.Imprimir(cuadrados, Enums.Idiomas.Ingles);
 
-            Assert.AreEqual("<h1>Shapes report!</h1>3 Squares | Area 9 | Perimeter 12 <br/>TOTAL:<br/>3 Shapes Perimeter 12 Area 9", resumen);
+            Assert.AreEqual("<h1>Shapes report!</h1>3 Squares | Area 35 | Perimeter 36 <br/>TOTAL:<br/>3 Shapes Perimeter 36 Area 35", resumen);
         }
 
         [TestCase]
@@ -66,19 +66,19 @@ namespace DevelopmentChallenge.Data.Tests
         {
             var formas = new List<FormaGeometrica>
             {
-                new FormaGeometrica(Enums.Formas.Cuadrado, 5, null, null),
-                new FormaGeometrica(Enums.Formas.Circulo, 3, null, null),
-                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 4, null, null),
-                new FormaGeometrica(Enums.Formas.Cuadrado, 2, null, null),
-                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 9, null, null),
-                new FormaGeometrica(Enums.Formas.Circulo, 2.75m, null, null),
-                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 4.2m, null, null)
+                new Cuadrado(5),
+                new Circulo (3),
+                new TrianguloEquilatero (4),
+                new Cuadrado (2),
+                new TrianguloEquilatero (9),
+                new Circulo (2.75m),
+                new TrianguloEquilatero (4.2m)
             };
 
             var resumen = FormaGeometrica.Imprimir(formas, Enums.Idiomas.Ingles);
 
             Assert.AreEqual(
-                "<h1>Shapes report!</h1>2 Squares | Area 4 | Perimeter 8 <br/>2 Circles | Area 5,94 | Perimeter 8,64 <br/>3 Triangles | Area 7,64 | Perimeter 12,6 <br/>TOTAL:<br/>7 Shapes Perimeter 29,24 Area 17,58",
+                "<h1>Shapes report!</h1>2 Squares | Area 29 | Perimeter 28 <br/>2 Circles | Area 52,03 | Perimeter 36,13 <br/>3 Triangles | Area 49,64 | Perimeter 51,6 <br/>TOTAL:<br/>7 Shapes Perimeter 115,73 Area 130,67",
                 resumen);
         }
 
@@ -87,19 +87,19 @@ namespace DevelopmentChallenge.Data.Tests
         {
             var formas = new List<FormaGeometrica>
             {
-                new FormaGeometrica(Enums.Formas.Cuadrado, 5, null, null),
-                new FormaGeometrica(Enums.Formas.Cuadrado, 2, null, null),
-                new FormaGeometrica(Enums.Formas.Circulo, 3, null, null),
-                new FormaGeometrica(Enums.Formas.Circulo, 2.75m, null, null),
-                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 4, null, null),
-                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 9, null, null),
-                new FormaGeometrica(Enums.Formas.TrianguloEquilatero, 4.2m, null, null)
+                new Cuadrado (5),
+                new Cuadrado (2),
+                new Circulo (3),
+                new Circulo (2.75m),
+                new TrianguloEquilatero (4),
+                new TrianguloEquilatero (9),
+                new TrianguloEquilatero (4.2m)
             };
 
             var resumen = FormaGeometrica.Imprimir(formas, Enums.Idiomas.Castellano);
 
             Assert.AreEqual(
-                "<h1>Reporte de Formas!</h1>2 Cuadrados | Área 4 | Perímetro 8 <br/>2 Círculos | Área 5,94 | Perímetro 8,64 <br/>3 Triángulos | Área 7,64 | Perímetro 12,6 <br/>TOTAL:<br/>7 Formas Perímetro 29,24 Área 17,58",
+                "<h1>Reporte de Formas!</h1>2 Cuadrados | Área 29 | Perímetro 28 <br/>2 Círculos | Área 52,03 | Perímetro 36,13 <br/>3 Triángulos | Área 49,64 | Perímetro 51,6 <br/>TOTAL:<br/>7 Formas Perímetro 115,73 Área 130,67",
                 resumen);
         }
 
@@ -108,13 +108,28 @@ namespace DevelopmentChallenge.Data.Tests
         {
             var formas = new List<FormaGeometrica>
             {
-                new FormaGeometrica(Enums.Formas.Rectangulo, 5, 7, 5)
+                new Rectangulo(10, 15)
             };
 
             var resumen = FormaGeometrica.Imprimir(formas, Enums.Idiomas.Italiano);
 
             Assert.AreEqual(
-                "<h1>Rapporto sui moduli!</h1>1 Rettangolo | Zona 35 | Perimetro 24 <br/>TOTALE:<br/>1 Forme Perimetro 24 Zona 35",
+                "<h1>Rapporto sui moduli!</h1>1 Rettangolo | Zona 150 | Perimetro 50 <br/>TOTALE:<br/>1 Forme Perimetro 50 Zona 150",
+                resumen);
+        }
+
+        [TestCase]
+        public void TestResumenListaConTrapecioEnIngles()
+        {
+            var formas = new List<FormaGeometrica>
+            {
+                new Trapecio(12, 7, 8, 5, 4)
+            };
+
+            var resumen = FormaGeometrica.Imprimir(formas, Enums.Idiomas.Ingles);
+
+            Assert.AreEqual(
+                "<h1>Shapes report!</h1>1 Trapeze | Area 76 | Perimeter 28 <br/>TOTAL:<br/>1 Shapes Perimeter 28 Area 76",
                 resumen);
         }
     }

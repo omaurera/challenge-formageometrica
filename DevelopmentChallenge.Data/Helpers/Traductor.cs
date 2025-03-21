@@ -1,6 +1,6 @@
 ﻿using DevelopmentChallenge.Data.Recursos;
 
-namespace DevelopmentChallenge.Data.Classes
+namespace DevelopmentChallenge.Data.Helpers
 {
     public class Traductor
 	{

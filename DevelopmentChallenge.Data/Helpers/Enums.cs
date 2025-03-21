@@ -1,4 +1,4 @@
-﻿namespace DevelopmentChallenge.Data.Classes
+﻿namespace DevelopmentChallenge.Data.Helpers
 {
     public class Enums
     {

@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Circulo.cs" />
+    <Compile Include="Classes\Cuadrado.cs" />
     <Compile Include="Classes\FormaGeometrica.cs" />
+    <Compile Include="Classes\Rectangulo.cs" />
+    <Compile Include="Classes\Trapecio.cs" />
+    <Compile Include="Classes\TrianguloEquilatero.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Classes\Traductor.cs" />
-    <Compile Include="Classes\Enums.cs" />
-    <Compile Include="Classes\Forma.cs" />
-    <Compile Include="Classes\Calculos.cs" />
+    <Compile Include="Helpers\Traductor.cs" />
+    <Compile Include="Helpers\Enums.cs" />
     <Compile Include="Recursos\Ingles.Designer.cs">
       <DependentUpon>Ingles.resx</DependentUpon>
       <AutoGen>True</AutoGen>
